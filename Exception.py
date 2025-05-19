@@ -1,13 +1,11 @@
 class invalidMobile(Exception):
     pass
-mobile=int(input())
-x=int(mobile)
-if x<0 or x>0 :
-    print (x)
+
 try:
-    if x<0 or x>0:
+    mobile = input("Enter your mobile number: ")
+    if not mobile.isdigit() or len(mobile) != 10:
         raise invalidMobile
-except invalidMobile :
-    print("mobile number should be 10 digits")
+except invalidMobile:
+    print("Mobile number should be 10 digits and numeric.")
 else:
-    print(x)
+    print("Valid mobile number:", mobile)
